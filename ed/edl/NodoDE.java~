@@ -1,0 +1,41 @@
+package estDat.estDatLin;
+
+
+/**
+ * Un nodo es aquel ue srive como contenedora de datos, y que lleva enlaces
+ * para su uso, el NodoDE tiene dos enlaces
+ * @author (Ivan FC) 
+ * @version (1.01)
+ */
+public class NodoDE<T>
+{
+    private NodoDE<T> ant;
+    private T        dato;
+    private NodoDE<T> sig;
+    public NodoDE(){
+        dato = null;
+        ant = sig = null;
+    }
+    public NodoDE(T dato){
+        this.dato = dato;
+        sig = ant = null;
+    }
+    public T getDato(){
+        return dato;
+    }
+    public NodoDE<T> getSig(){
+        return sig;
+    }
+    public NodoDE<T> getAnt(){
+        return ant;
+    }
+    public void setDato(T x){
+        dato = x;
+    }
+    public void setSig(NodoDE<T> x){
+        sig = x;
+    }
+    public void setAnt(NodoDE<T> x){
+        ant = x;
+    }
+}

@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ TestVacia()
+comment1.params=
+comment1.target=void\ TestInsertar1()
+comment2.params=
+comment2.target=void\ TestInsertar2()
+comment3.params=
+comment3.target=void\ TestLongitud()
+comment3.text=\r\n\ @Test\r\n\ \ \ \ public\ void\ TestInsertarDP(){\r\n\ \ \ \ \ \ \ \ ListaDE<Double>\ lde;\r\n\ \ \ \ \ \ \ \ lde\ \=\ new\ ListaDE<Double>();\r\n\ \ \ \ \ \ \ \ assertEquals(true,\ \ \ lde.vacia());\r\n\ \ \ \ \ \ \ \ lde.insertar(1.0);\r\n\ \ \ \ \ \ \ \ lde.insertar(2.0);\r\n\ \ \ \ \ \ \ \ lde.insertar(3.0);\r\n\ \ \ \ \ \ \ \ lde.insertarDP(2.5,\ 2);\r\n\ \ \ \ \ \ \ \ assertEquals(false,\ \ \ \ lde.vacia());\r\n\ \ \ \ \ \ \ \ assertEquals(new\ Double(2.5),\ \ \ lde.acceder(2));\r\n\ \ \ \ }\r\n
+comment4.params=
+comment4.target=void\ acceder_PosicionInvalida_Null()
+comment5.params=
+comment5.target=void\ acceder_PosicionValida_Elemento()
+comment6.params=
+comment6.target=void\ TestEliminar()
+comment7.params=
+comment7.target=void\ Test_eliminar_PosicionInvalida_TamanioOriginal()
+comment8.params=
+comment8.target=void\ Test_eliminar_PosicionInicial_TamanioOriginalMenos1()
+numComments=9

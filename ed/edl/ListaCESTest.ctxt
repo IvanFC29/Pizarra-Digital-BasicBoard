@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ testVacia()
+comment1.params=
+comment1.target=void\ testInsertar()
+comment2.params=
+comment2.target=void\ testInsertar2()
+comment3.params=
+comment3.target=void\ testAcceder()
+comment4.params=
+comment4.target=void\ testLongitud()
+comment5.params=
+comment5.target=void\ testEliminar()
+comment6.params=
+comment6.target=void\ eliminar_ListaConUnElemento_ListaVacia()
+comment7.params=
+comment7.target=void\ testInsertar_DP()
+comment8.params=
+comment8.target=void\ testBuscar()
+numComments=9

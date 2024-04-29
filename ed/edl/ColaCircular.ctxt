@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=capacidad
+comment0.target=ColaCircular(int)
+comment1.params=dato
+comment1.target=java.lang.String\ encolarCC(java.lang.Object)
+comment2.params=
+comment2.target=boolean\ llena()
+comment3.params=
+comment3.target=int\ getCapacidad()
+numComments=4

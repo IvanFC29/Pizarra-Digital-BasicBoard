@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ Testvacio()
+comment1.params=
+comment1.target=void\ TestInsertarAmp()
+comment10.params=
+comment10.target=void\ TestAmplitudNiv()
+comment11.params=
+comment11.target=void\ TestPodar()
+comment2.params=
+comment2.target=void\ TestInsertarAmp2()
+comment3.params=
+comment3.target=void\ TestNivel()
+comment4.params=
+comment4.target=void\ Test_SameFringe()
+comment5.params=
+comment5.target=void\ Test_SameFringe2()
+comment6.params=
+comment6.target=void\ Test_EsSimetrico()
+comment7.params=
+comment7.target=void\ Test_EsSimetrico2()
+comment8.params=
+comment8.target=void\ Test_Eliminar()
+comment9.params=
+comment9.target=void\ Test_Acceso()
+numComments=12

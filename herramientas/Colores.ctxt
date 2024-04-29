@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Colores()
+comment1.params=evento
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=colorActual2
+comment2.target=void\ setColorActual(java.awt.Color)
+comment3.params=
+comment3.target=java.awt.Color\ getColorActual()
+numComments=4

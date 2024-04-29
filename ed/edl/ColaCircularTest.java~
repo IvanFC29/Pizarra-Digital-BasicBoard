@@ -1,0 +1,43 @@
+package estDat.estDatLin;
+
+
+
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The test class ColaCircularTest.
+ *
+ * @author  (your name)
+ * @version (a version number or a date)
+ */
+public class ColaCircularTest
+{
+    @Test
+    public void TestLlena(){
+        ColaCircular<Integer> cc;
+        cc = new ColaCircular<Integer>(2);
+        assertEquals(false,   cc.llena());
+    }
+    @Test
+    public void TestEncolarCC(){
+        ColaCircular<Integer> cc;
+        cc = new ColaCircular<Integer>(2);
+        assertEquals(false,   cc.llena());
+        cc.encolarCC(1);
+        cc.encolarCC(2);
+        assertEquals(true,   cc.llena());
+    }
+    @Test
+    public void TestEncolarCC2(){
+        ColaCircular<Integer> cc;
+        cc = new ColaCircular<Integer>(2);
+        assertEquals(false,   cc.llena());
+        cc.encolarCC(1);
+        cc.encolarCC(2);
+        assertEquals(true,   cc.llena());
+        assertEquals(new String("La cola esta completa"),   cc.encolarCC(5));
+    }
+}

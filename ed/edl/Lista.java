@@ -1,0 +1,16 @@
+package ed.edl;
+
+/**
+ * Toda Lista debe saber al menos los siguientes metodos.
+ * @author (Ivan FC) 
+ * @version (1.01)
+ */
+public interface Lista<T>
+{
+    public boolean vacia();
+    public void insertar(T dato);//al final
+    public T acceder(int pos);
+    public int longitud();
+    public void insertarDP(T dato, int pos);
+    public T eliminar(int pos);
+}

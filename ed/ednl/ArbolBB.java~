@@ -1,0 +1,286 @@
+package ed.ednl;
+import ed.edl.*;
+
+/**
+ * Un Arbol Binario de Busqueda lleva orden en su insercion
+ * Los elementos menores a la raiz se van a la izquierda
+ * Los elementos mayores a la raiz van a la derecha 
+ * @author (Ivan FC) 
+ * @version (1.01)
+ */
+public class ArbolBB<E extends Comparable<E>> 
+{
+    private ArbolBB<E> izq;
+    private E raiz;
+    private ArbolBB<E> der;
+    
+    public ArbolBB(){
+        raiz = null;
+        izq = der = null;
+    }
+    public E getRaiz(){
+        return raiz;
+    }
+    
+    public boolean vacio(){
+        return raiz == null;
+    }
+    
+    /**
+     *  El metodo compara el dato con la raiz del arbol
+     *  para asi decidir donde insertar
+     */
+    public void insertar(E dato){
+        if(vacio()){
+            raiz = dato;
+            izq = new ArbolBB<E>();
+            der = new ArbolBB<E>();
+        }else{
+            if(dato.compareTo(raiz) < 0){
+                izq.insertar(dato);
+            }else{
+                der.insertar(dato);
+            }
+        }
+    }
+    
+    /**
+     * El metodo eliminar debera hacer una sustitucion en el momento de eliminacion
+     * Caso1:El dato es una hoja, solo se elimina
+     * Caso2:El dato tiene solo el arbol izq., 
+     * Caso3:
+     * Caso4:
+     */
+    public void eliminar(E dato){
+        int opcion;
+        ArbolBB<E> sust;
+        if(!vacio()){
+            if(dato.equals(raiz)){
+                opcion = estado();
+                switch(opcion){
+                    case 0: //hoja
+                         raiz = null; izq = null; der = null; break;
+                    case 1: //solo tiene izq
+                         raiz = izq.raiz; der = izq.der;  izq = izq.izq;  break;
+                    case 2: //solo tiene der
+                         raiz = der.raiz; izq = der.izq;  der = der.der;  break;
+                    case 3: //tiene izq y der 
+                         sust = der.descIzq();
+                         raiz = sust.raiz;
+                         sust.eliminar(raiz);
+                }
+            }else{
+                if(dato.compareTo(raiz) < 0){
+                    izq.eliminar(dato);
+                }else{
+                    der.eliminar(dato);
+                }
+            }
+        }
+    }
+    private int estado(){
+        int estado;
+        if(izq.vacio()){
+            if(der.vacio())
+               estado = 0;
+            else
+               estado = 2;
+        }else{
+            if(der.vacio())
+               estado = 1;
+            else
+               estado = 3;
+        }
+        return estado;
+    }
+    private ArbolBB<E> descIzq(){
+        ArbolBB<E> sust;
+        if(izq.vacio())
+           sust = this;
+        else
+           sust = izq.descIzq();
+        return sust;
+    }
+    
+    public int altura(){
+        int alto = -1;
+        if(!vacio()){
+            alto = 1 + max(izq.altura(), der.altura());
+        }
+        return alto;
+    }
+    private int max(int i, int d){
+        return d > i? d:i;
+    }  
+    public int altura(E dato){
+        int alt = -1;
+        if(!vacio()){
+            if(raiz.equals(dato)){
+                alt = 1 + max(izq.altura(), der.altura());
+            }else{
+                alt = izq.altura(dato);
+                if(alt == -1){
+                    alt = der.altura(dato);
+                }
+                if(alt != -1){
+                    alt+=1;
+                }
+            }
+        }
+        return alt;
+    }
+    
+    /**
+     * El metodo devuelve una lista de todos los datos que estan en un 
+     * nivel n
+     */
+    public ListaSE<E> accederNivel(int n){
+        ListaSE<E> datos = new ListaSE<E>();
+        accederNivel(n, datos);
+        return datos;
+    }
+    private ListaSE<E> accederNivel(int n, ListaSE<E> datos){
+        if(vacio()){
+            datos = null;
+        }else{
+            if(n == 0){
+                datos.insertar(raiz);
+            }else{
+                if(izq != null){
+                    izq.accederNivel(n-1, datos);
+                }
+                if(der != null){
+                    der.accederNivel(n-1, datos);
+                }
+            }
+        }
+        return datos;
+    }
+    
+    public int nivel(E dato){
+        int niv;
+        if(vacio()){
+            niv = -1;
+        }else{
+            if(raiz.equals(dato)){
+                niv = 0;
+            }else{    
+                niv = izq.nivel(dato);
+                if(niv == -1){
+                    niv = der.nivel(dato);
+                }else{
+                    niv = niv+1;
+                }
+            }
+        }
+        return niv;
+    }
+    
+    public Lista<E> camino(E dato1, E dato2){
+        Lista<E> lista = new ListaSE<E>();
+        if(vacio()){
+            lista = null;
+        }else{
+            if(buscar(dato1) != null && buscar(dato2) != null){
+                if(raiz.equals(dato1)){
+                    lista.insertar(raiz);
+                    lista.insertar(antecesor(dato2));
+                }else if(raiz.equals(dato2)){
+                    lista.insertar(antecesor(dato2));
+                    lista.insertar(raiz);
+                }else{
+                    lista = izq.camino(dato1, dato2);
+                    if(lista == null){
+                        lista = der.camino(dato1, dato2);
+                    }
+                }
+            }
+        }
+        return lista;
+    }
+    
+    /**
+     * Este metodo confirmara que el dato si exista 
+     */
+    public E buscar(E dato){//aun no funciona
+        E encontro = null;
+        if(vacio()){
+            encontro = null;
+        }else{
+            if(raiz.equals(dato)){
+                encontro = dato;
+            }else{
+                encontro = izq.buscar(dato);
+                if(encontro == null){
+                    encontro = der.buscar(dato);
+                }
+            }
+        }
+        return encontro; 
+    }
+   
+    public E antecesor(E dato){
+        E res;
+        if(vacio())
+            res = null;
+        else{
+            if(raiz.equals(dato)){
+                res = dato;
+            }else{
+                if(!izq.vacio()){
+                    res = izq.antecesor(dato);
+                }else if(!der.vacio()){
+                    res = der.antecesor(dato);
+                }else{
+                    res = null;
+                }
+            }
+        }
+        return res;
+    }
+    
+    public ListaSE<E> rama(E dato){
+        return null;
+    }
+    
+    public Lista<E> sobrinos(E dato){
+        return null;
+    }
+    
+    public boolean esHoja(E dato){
+        boolean res;
+        if(vacio())
+            res = false;
+        else{
+            res = izq.esHoja(dato);
+            if(izq.vacio()){
+                res = true;
+            }
+            res = der.esHoja(dato);
+            if(der.vacio()){
+                res = true;
+            }
+        }
+        return res;
+    }
+    
+    public ListaSE<E> recorridoAmp(){
+        ListaSE<E> lista = new ListaSE();
+        Cola<ArbolBB<E>> cola = new Cola();
+        cola.encolar(this);
+        amplitud(cola, lista);
+        return lista;
+    }
+    private void recorridoAmp(Cola<ArbolBB<E>> c, ListaSE<E> l){
+        ArbolBB<E> act;
+        if(!vacio()){
+            act = c.decolar();
+            if(!act.vacio()){
+                l.insertar(raiz);
+                c.encolar(act.izq);
+                c.encolar(act.der);
+            }
+            recorridoAmp(c,l);
+        }
+    }
+}

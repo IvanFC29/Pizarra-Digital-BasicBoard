@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Bicola()
+comment1.params=dato
+comment1.target=void\ meter(java.lang.Object)
+comment1.text=\r\n\ Permite\ meter\ un\ dat\ por\ el\ frente\r\n
+comment2.params=
+comment2.target=java.lang.Object\ salir()
+comment2.text=\r\n\ Permite\ salir\ del\ final,\ sin\ haber\ llegado\ al\ frente\r\n
+numComments=3

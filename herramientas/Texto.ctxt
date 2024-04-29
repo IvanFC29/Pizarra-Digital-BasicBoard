@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=p\ canvas\ canvas2\ canvas3
+comment0.target=Texto(Pizarra,\ Lienzo,\ Lienzo2,\ Lienzo3)
+comment1.params=
+comment1.target=void\ insertarTexto()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=void\ insertar()
+comment4.params=e
+comment4.target=void\ mousePressed(java.awt.event.MouseEvent)
+comment5.params=e
+comment5.target=void\ mousePressed(java.awt.event.MouseEvent)
+comment6.params=e
+comment6.target=void\ mousePressed(java.awt.event.MouseEvent)
+numComments=7

@@ -1,0 +1,188 @@
+ package ed.ednl;
+
+
+
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The test class ArbolBinTest.
+ *
+ * @author  (your name)
+ * @version (a version number or a date)
+ */
+public class ArbolBinTest
+{
+   @Test
+   public void Testvacio(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin<Integer>();
+       assertEquals(true, ab.vacio());
+   }
+   @Test
+   public void TestInsertarAmp(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin<Integer>();
+       assertEquals(true, ab.vacio());
+       ab.insertarAmp(3);
+       ab.insertarAmp(5);
+       ab.insertarAmp(7);
+       assertEquals(false,  ab.vacio());
+   }
+   @Test
+   public void TestInsertarAmp2(){
+       /*
+        *       3
+        *      / \
+        *     5   7
+        *    /
+        *   2 
+        */
+       ArbolBin<Integer> ab;                       
+       ab = new ArbolBin<Integer>();                        
+       assertEquals(true, ab.vacio());
+       ab.insertarAmp(3);              
+       ab.insertarAmp(5);
+       ab.insertarAmp(7);
+       assertEquals(false,  ab.vacio());
+   }
+   @Test
+   public void TestNivel(){
+       /*
+        *       3
+        *      / \
+        *     5   7
+        *    /
+        *   2 
+        */
+       ArbolBin<Integer> ab;                       
+       ab = new ArbolBin<Integer>();                        
+       assertEquals(true, ab.vacio());
+       ab.insertarAmp(3);              
+       ab.insertarAmp(5);
+       ab.insertarAmp(7);
+       assertEquals(false,  ab.vacio());
+       assertEquals(1,   ab.nivel(7));
+   }
+   @Test
+   public void Test_SameFringe(){
+       ArbolBin<Integer> ab1, ab2;
+       ab1 = new ArbolBin();
+       ab2 = new ArbolBin();
+       
+       ab1.insertarAmp(1);
+       ab1.insertarAmp(2);
+       ab1.insertarAmp(3);
+       
+       ab2.insertarAmp(5);
+       ab2.insertarAmp(2);
+       ab2.insertarAmp(3);
+       
+       assertEquals(true, ab1.sameFringe(ab2));
+   }
+   @Test
+   public void Test_SameFringe2(){
+       ArbolBin<Integer> ab1, ab2;
+       ab1 = new ArbolBin();
+       ab2 = new ArbolBin();
+       
+       ab1.insertarAmp(1);
+       ab1.insertarAmp(2);
+       ab1.insertarAmp(3);
+       
+       ab2.insertarAmp(5);
+       ab2.insertarAmp(2);
+       
+       assertEquals(false, ab1.sameFringe(ab2));
+   }
+   @Test
+   public void Test_EsSimetrico(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin();
+       
+       ab.insertarAmp(1);
+       ab.insertarAmp(2);
+       ab.insertarAmp(3);
+       
+       assertEquals(false, ab.esSimetrico());
+   }
+   @Test
+   public void Test_EsSimetrico2(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin();
+       ab.insertarAmp(1);
+       ab.insertarAmp(2);
+       ab.insertarAmp(2);
+       ab.insertarAmp(4);
+       ab.insertarAmp(4);
+       assertEquals(false, ab.esSimetrico());
+   }
+   @Test
+   public void Test_Eliminar(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin();
+             
+       ab.insertarAmp(1);
+       ab.insertarAmp(2);
+       ab.insertarAmp(2);
+       ab.insertarAmp(4);
+       ab.insertarAmp(4);
+       assertEquals(false, ab.esSimetrico());
+       assertEquals(new Integer(4),   ab.eliminar(4));
+   }
+   @Test
+   public void Test_Acceso(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin();
+             
+       ab.insertarAmp(1);
+       ab.insertarAmp(2);
+       ab.insertarAmp(2);
+       ab.insertarAmp(4);
+       ab.insertarAmp(4);
+       assertEquals(false, ab.esSimetrico());
+       assertEquals(new Integer(4),   ab.acceso(4));
+   }
+   @Test
+   public void TestAmplitudNiv(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin<Integer>();
+       assertEquals(true, ab.vacio());
+       ab.insertarAmp(5);
+       ab.insertarAmp(4);
+       ab.insertarAmp(90);
+       ab.insertarAmp(35);
+       ab.insertarAmp(21);
+       ab.insertarAmp(-1);//
+       ab.insertarAmp(2);
+       ab.insertarAmp(9);
+       ab.insertarAmp(-2);//
+       ab.insertarAmp(6);
+       ab.insertarAmp(1);
+       ab.insertarAmp(-3);//
+       ab.insertarAmp(15);
+       assertEquals(false,  ab.vacio());
+       ab.amplitudNivel();
+   }
+   @Test
+   public void TestPodar(){
+       ArbolBin<Integer> ab;
+       ab = new ArbolBin<Integer>();
+       assertEquals(true, ab.vacio());
+       ab.insertarAmp(5);
+       ab.insertarAmp(4);
+       ab.insertarAmp(90);
+       ab.insertarAmp(35);
+       ab.insertarAmp(21);
+       ab.insertarAmp(-1);//
+       ab.insertarAmp(2);
+       ab.insertarAmp(9);
+       ab.insertarAmp(-2);//
+       ab.insertarAmp(6);
+       assertEquals(false,  ab.vacio());\
+       ab.podar(2);
+       ab.amplitudNivel();
+   }
+}

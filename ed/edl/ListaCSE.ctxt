@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ListaCSE()
+comment1.params=
+comment1.target=boolean\ vacia()
+comment2.params=dato
+comment2.target=void\ insertar(java.lang.Object)
+comment3.params=pos
+comment3.target=java.lang.Object\ acceder(int)
+comment4.params=
+comment4.target=int\ longitud()
+comment5.params=dato\ pos
+comment5.target=void\ insertarDP(java.lang.Object,\ int)
+comment6.params=pos
+comment6.target=java.lang.Object\ eliminar(int)
+comment7.params=dato
+comment7.target=boolean\ buscar(java.lang.Object)
+numComments=8

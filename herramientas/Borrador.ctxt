@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=board\ canvas\ canvas2\ canvas3
+comment0.target=Borrador(Pizarra,\ Lienzo,\ Lienzo2,\ Lienzo3)
+comment1.params=
+comment1.target=void\ activarBorrador()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=void\ borrar()
+comment4.params=e
+comment4.target=void\ mouseDragged(java.awt.event.MouseEvent)
+comment5.params=e
+comment5.target=void\ mouseDragged(java.awt.event.MouseEvent)
+comment6.params=e
+comment6.target=void\ mouseDragged(java.awt.event.MouseEvent)
+comment7.params=
+comment7.target=void\ cambiarTamanio()
+comment8.params=e
+comment8.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment9.params=t
+comment9.target=void\ setTam(int)
+numComments=10

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=l\ cuad\ cir\ rect\ l2\ l3
+comment0.target=FigurasGeo(herramientas.Lienzo,\ Cuadrado,\ Circulo,\ Linea,\ herramientas.Lienzo2,\ herramientas.Lienzo3)
+comment1.params=
+comment1.target=void\ iniciarComponentes()
+comment2.params=
+comment2.target=javax.swing.JMenu\ getFormas()
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=4

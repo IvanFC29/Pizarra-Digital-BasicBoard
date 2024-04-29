@@ -1,0 +1,32 @@
+Que es una E.D.
+ => Es una contenedora de tipo de datos, de forma dinamica
+    El principio basico es:
+        >hacer la E.D.
+        >declararla
+        >definir tipo de Dato
+        >crearla
+Clasificacion:
+ => se clasifica por:
+       >su organizacion ===> lineales, No lineales
+       >su administracion ===> restrigidas, No restringidas
+      
+Lineles:
+ => siguen una estructura en linea recta,
+    >Listas; son No restringidas en operacion
+    >Pila; son restringidas en operacion
+           insercion y eliminacion controlada
+           Son LIFO ==> Ultimo en entrar, Primero en salir
+    >Cola; son restringidas en operacion
+           insercion y eliminacion controlada
+           Son FIFO ==> Primero en entar, Primero en salir
+        =>Bicola; es una cola
+                 T salir() ==> eliminar del final
+                 void meter() ==> insertar del frente
+        =>ColaPrioridad; es una cola
+                         Inserta los datos de acuedo a un criterio de prioridad
+                         
+No Lineales:
+ => Siguen una estructura conectada 
+   Se toma la relacion arriba, abajo
+   
+                 

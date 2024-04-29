@@ -1,0 +1,92 @@
+package estDat.estDatLin;
+
+
+
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class ListaSERTest
+{
+    @Test
+    public void testVacia(){
+        //devuelve true si esta vacia
+        ListaSER<Integer> l = new ListaSER();
+        assertEquals(true, l.vacia());
+    }
+    @Test
+    public void testVacia2(){
+        //devuelve false si la lista tiene al menos un elemento
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(2); 
+        assertEquals(false, l.vacia());
+    }
+    @Test
+    public void testInsertar(){
+        //inserta el nuevo elemento al final
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(3);
+        l.insertar(5);
+        assertEquals(false, l.vacia());
+    }
+    @Test
+    public void testLongitud(){
+        //devuelve la longitud de la lista
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(4);
+        l.insertar(2);
+        assertEquals(2, l.longitud());
+    }
+    @Test
+    public void testAcceder(){
+        //accede al elemento dada una posicion
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(4);//pos 0
+        l.insertar(2);//pos 1
+        assertEquals(new Integer(2), l.acceder(1));
+    }
+    @Test
+    public void testInsertarDP(){
+        //inserta el dato dada una posicion
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(4);//pos 0 -->1
+        l.insertar(2);//pos 1 -->2
+        l.insertarDP(5,0);//pos 1 -->0
+        assertEquals(new Integer(5), l.acceder(0));
+    }
+    @Test
+    public void testInsertWhitPos2(){
+        //inserta el dato dada una posicion
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(4);//pos 0 -->1 --->longitud 1
+        l.insertar(2);//pos 1 -->2 ---> longitud 2
+        l.insertarDP(5,2);//pos 1 -->0
+        assertEquals(new Integer(5), l.acceder(2));
+    }
+    @Test
+    public void testInsertWhitPos3(){
+        //inserta el dato dada una posicion
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(1);//pos 0 -->0
+        l.insertar(2);//pos 1 -->2
+        l.insertar(3);//pos 2 --->3  
+        l.insertarDP(0,1); //pos -->1
+       
+        assertEquals(new Integer(2), l.acceder(2));
+        assertEquals(new Integer(1), l.acceder(0));
+        assertEquals(new Integer(3), l.acceder(3));
+        assertEquals(new Integer(0), l.acceder(1));
+    }
+    @Test
+    public void testEliminar(){
+        //elimina el elemento dada una posicion
+        ListaSER<Integer> l = new ListaSER();
+        l.insertar(3);//pos 0 longitus 1
+        l.insertar(5);//pos 1  longitud 2
+        l.eliminar(1);//  longitud 1
+        l.eliminar(0);// longitud 0
+        assertEquals(0,l.longitud());
+        assertEquals(true, l.vacia());
+    }
+}

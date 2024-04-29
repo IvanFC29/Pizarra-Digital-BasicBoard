@@ -1,0 +1,35 @@
+package ed.edl;
+
+
+
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The test class ColaPrioridadTest.
+ *
+ * @author  (your name)
+ * @version (a version number or a date)
+ */
+public class ColaPrioridadTest
+{
+    @Test
+    public void TestVacia(){
+        ColaPrioridad<String> cp;
+        cp = new ColaPrioridad<String>();
+        assertEquals(true,    cp.vacia());
+    }
+    @Test
+    public void TestEncolarPrioridad(){
+        ColaPrioridad<String> cp;
+        cp = new ColaPrioridad<String>();
+        assertEquals(true,    cp.vacia());
+        cp.encolarPrioridad("Joven");
+        assertEquals(false,   cp.vacia());
+        assertEquals(new String("Joven"),    cp.ver());
+        cp.encolarPrioridad("Adulto Mayor");
+        assertEquals(new String("Adulto Mayor"),   cp.ver());
+    }
+}

@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.params=canvas\ canvas2\ canvas3
+comment0.target=Circulo(herramientas.Lienzo,\ herramientas.Lienzo2,\ herramientas.Lienzo3)
+comment1.params=
+comment1.target=void\ graficarCirculo()
+comment2.params=e
+comment2.target=void\ mousePressed(java.awt.event.MouseEvent)
+comment3.params=e
+comment3.target=void\ mouseReleased(java.awt.event.MouseEvent)
+comment4.params=e
+comment4.target=void\ mousePressed(java.awt.event.MouseEvent)
+comment5.params=e
+comment5.target=void\ mouseReleased(java.awt.event.MouseEvent)
+comment6.params=e
+comment6.target=void\ mousePressed(java.awt.event.MouseEvent)
+comment7.params=e
+comment7.target=void\ mouseReleased(java.awt.event.MouseEvent)
+numComments=8

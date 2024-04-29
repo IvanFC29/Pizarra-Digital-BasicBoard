@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Cola()
+comment1.params=
+comment1.target=boolean\ vacia()
+comment2.params=dato
+comment2.target=void\ encolar(java.lang.Object)
+comment2.text=\r\n\ El\ metodo\ encolar\ es\ sinonimo\ de\ insertar;\r\n\ Por\ defecto\ inserta\ el\ dato\ por\ el\ final\r\n
+comment3.params=
+comment3.target=java.lang.Object\ decolar()
+comment3.text=\r\n\ El\ metodo\ decolar\ es\ sinonimo\ de\ eliminar\r\n\ Por\ defecto\ elimina\ el\ dato\ que\ vive\ al\ inicio\ d\ la\ cola\r\n
+comment4.params=
+comment4.target=java.lang.Object\ ver()
+comment4.text=\r\n\ Devuelve\ el\ elementto\ del\ frente\r\n
+numComments=5

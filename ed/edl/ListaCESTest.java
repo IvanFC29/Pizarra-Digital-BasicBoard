@@ -1,0 +1,128 @@
+package ed.edl;
+
+
+
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * The test class ListaCESTest.
+ *
+ * @author  (your name)
+ * @version (a version number or a date)
+ */
+public class ListaCESTest
+{
+    @Test
+    public void testVacia(){
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+    }
+    @Test
+    public void testInsertar(){
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+        lcse.insertar('a');
+        assertEquals(false,    lcse.vacia());
+    }
+    @Test
+    public void testInsertar2(){
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+        lcse.insertar('a');
+        lcse.insertar('b');
+        lcse.insertar('c');
+        assertEquals(false,    lcse.vacia());
+    }
+    @Test
+    public void testAcceder(){
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+        lcse.insertar('a');
+        lcse.insertar('b');
+        lcse.insertar('c');
+        assertEquals(false,    lcse.vacia());
+        assertEquals(new Character('a'),    lcse.acceder(0));
+        assertEquals(new Character('b'),    lcse.acceder(1));
+        assertEquals(new Character('c'),    lcse.acceder(2));
+        assertEquals(null,    lcse.acceder(4));
+    }
+    @Test
+    public void testLongitud(){
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+        lcse.insertar('a');
+        lcse.insertar('b');
+        lcse.insertar('c');
+        assertEquals(false,    lcse.vacia());
+        assertEquals(new Character('a'),    lcse.acceder(0));
+        assertEquals(new Character('b'),    lcse.acceder(1));
+        assertEquals(new Character('c'),    lcse.acceder(2));
+        assertEquals(null,    lcse.acceder(4));
+        assertEquals(3,    lcse.longitud());
+    }
+    @Test
+    public void testEliminar(){
+        //Elimana el dato dada una posicion
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+        lcse.insertar('a');
+        lcse.insertar('b');
+        lcse.insertar('c');
+        assertEquals(false,    lcse.vacia());
+        assertEquals(new Character('a'),    lcse.acceder(0));
+        assertEquals(new Character('b'),    lcse.acceder(1));
+        assertEquals(new Character('c'),    lcse.acceder(2));
+        assertEquals(null,    lcse.acceder(4));
+        assertEquals(3,    lcse.longitud());
+        
+        assertEquals(new Character('a'),   lcse.eliminar(0));
+        lcse.eliminar(0);
+        assertEquals(2,   lcse.longitud());
+    }
+     @Test
+    public void eliminar_ListaConUnElemento_ListaVacia(){
+        ListaCSE<Integer> l1 = new ListaCSE();
+        l1.insertar(5); //pos = 0, null
+        //longitud = 1
+        assertEquals(new Integer(5), l1.eliminar(0));
+        assertEquals(null, l1.acceder(0));
+        assertEquals(0, l1.longitud());
+        assertEquals(true, l1.vacia());
+    }
+    @Test
+    public void testInsertar_DP(){
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+        lcse.insertar('a');
+        lcse.insertar('b');
+        lcse.insertar('c');
+        assertEquals(false,    lcse.vacia());
+        assertEquals(3,    lcse.longitud());
+        lcse.insertarDP('d', 0);
+        assertEquals(new Character('d'),  lcse.acceder(0));
+        assertEquals(4,    lcse.longitud());
+    }
+    @Test
+    public void testBuscar(){
+        ListaCSE<Character> lcse;
+        lcse = new ListaCSE<Character>();
+        assertEquals(true,    lcse.vacia());
+        lcse.insertar('a');
+        lcse.insertar('b');
+        lcse.insertar('c');
+        assertEquals(false,    lcse.vacia());
+        assertEquals(true,    lcse.buscar('a'));
+        assertEquals(true,     lcse.buscar('b'));
+        assertEquals(false,    lcse.buscar('m'));
+    }
+}

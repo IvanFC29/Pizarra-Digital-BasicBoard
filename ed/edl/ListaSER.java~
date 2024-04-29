@@ -1,0 +1,93 @@
+package estDat.estDatLin;
+/**
+ * Esta lista se enlasa entre nuevas listas que apumtan al null
+ * Almacena el dato y el siguiente sera otra Lista de la misma clase
+ */
+public class ListaSER<T> implements Lista<T>
+{
+    private T dato;
+    private ListaSER<T> siguiente;
+    public ListaSER(){
+        dato = null;
+        siguiente = null;
+    }
+    
+    public boolean vacia(){
+        return dato == null;
+    }
+    
+    public void insertar(T dato){
+        if(vacia()){
+            this.dato = dato;
+            siguiente = new ListaSER();
+        }else{
+            siguiente.insertar(dato);
+        }
+    }
+    
+    public int longitud(){
+        int tam;
+        if(vacia()){
+            tam = 0;
+        }else{
+            tam = 1 + siguiente.longitud();
+        }
+        return tam;
+    }
+    
+    public T acceder(int pos){
+        T elDato = null;
+        if(pos >= 0 && pos < longitud()){
+            if(!vacia()){
+                if(pos == 0)
+                    elDato = this.dato;
+                else
+                    elDato = siguiente.acceder(pos-1);
+            }
+        }
+        return elDato;
+    }
+    
+    public void insertarDP(T dato, int pos){
+        if(pos >= 0 && pos <= longitud()){
+            if(pos == 0){
+                ListaSER<T> aux = new ListaSER();//hacer una copia
+                aux.insertar(this.dato);//insertar el primer dato en la copia
+                aux.siguiente = siguiente;//guardar el resto de la lista en la copia
+                this.dato = dato;//remplazar
+                this.siguiente = aux;//reconectar los enlaces
+            }else if(pos == longitud()){
+                insertar(dato);
+            }else{
+                siguiente.insertarDP(dato, pos-1);
+            }
+        }
+    }
+    
+    public T eliminar(int pos){
+        T res = null;
+        if(pos >= 0 && pos < longitud()){
+            if(pos == 0){
+                res = this.dato;
+                this.dato = siguiente.dato;
+                this.siguiente = siguiente.siguiente;
+            }else{
+                res = siguiente.eliminar(pos-1);
+            }
+        }
+        return res;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
